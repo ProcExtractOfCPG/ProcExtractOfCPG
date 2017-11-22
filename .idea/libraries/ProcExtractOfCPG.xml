@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="ProcExtractOfCPG">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/opennlp-tools-1.8.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/opennlp-tools-1.8.3-DA.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
