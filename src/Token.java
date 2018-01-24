@@ -3,7 +3,9 @@ public class Token {
 	private String POSTag = null;
 	private String MetaMapAnnotation = null;
 	private int Position = -1;
+	private int PositionInParseTree = -1;
 	private int Length;
+	private int LengthInParseTree;
 
 	public Token(){
 		return;
@@ -12,7 +14,9 @@ public class Token {
 	public Token(String word, int pos, int len){
 		setWord(word);
 		setPosition(pos);
+		setPositionInParseTree(pos);
 		setLength(len);
+		setLengthInParseTree(len);
 		return;
 	}
 
@@ -28,9 +32,11 @@ public class Token {
 		return POSTag;
 	}
 
-	public void setPOSTag(String POSTag) {
-		this.POSTag = POSTag;
-	}
+	public void setPOSTag(String POSTag) { this.POSTag = POSTag; }
+
+	public int getLength() { return Length; }
+
+	public void setLength(int length) { Length = length; }
 
 	public String getMetaMapAnnotation() {
 		return MetaMapAnnotation;
@@ -48,11 +54,15 @@ public class Token {
 		Position = position;
 	}
 
-	public int getLength() {
-		return Length;
+	public int getLengthInParseTree() {
+		return LengthInParseTree;
 	}
 
-	public void setLength(int length) {
-		Length = length;
+	public int getPositionInParseTree() { return PositionInParseTree; }
+
+	public void setPositionInParseTree(int positionInParseTree) { PositionInParseTree = positionInParseTree; }
+
+	public void setLengthInParseTree(int length) {
+		LengthInParseTree = length;
 	}
 }

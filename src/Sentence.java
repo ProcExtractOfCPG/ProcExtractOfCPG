@@ -8,7 +8,8 @@ public class Sentence {
 	private Span TokenSpans[] = null;
 	private int SentenceLength = 0;
 	private Parse ParseTree[];
-	private String EnhancedParseTree;
+	private String EnhancedParseTree = null;
+	private String ParseTreeText = null;
 
 
 	public Sentence(String text){ this.Text = text; return; }
@@ -24,6 +25,8 @@ public class Sentence {
 		}
 		return;
 	}
+
+	public int getSentenceLength() { return SentenceLength;	}
 
 	public void setSentenceLength(int length){ SentenceLength = length;  }
 
@@ -59,11 +62,29 @@ public class Sentence {
 		Text = text;
 	}
 
-	public String getEnhancedParseTree() {
-		return EnhancedParseTree;
-	}
+	public String getEnhancedParseTree() { return EnhancedParseTree; }
 
 	public void setEnhancedParseTree(String enhancedParseTree) {
 		EnhancedParseTree = enhancedParseTree;
+	}
+
+	public String getParseTreeText() { return ParseTreeText; }
+
+	public void setParseTreeText(String parseTreeText) { ParseTreeText = parseTreeText; }
+
+	public String[] getAllPOSTags() {
+		String[] postags = new String[SentenceLength];
+		for (int i = 0; i < SentenceLength; i++) {
+			postags[i] = Tokens[i].getPOSTag();
+		}
+		return postags;
+	}
+
+	public String[] getAllWords() {
+		String[] words = new String[SentenceLength];
+		for (int i = 0; i < SentenceLength; i++) {
+			words[i] = Tokens[i].getWord();
+		}
+		return words;
 	}
 }
